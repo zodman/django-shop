@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="fartApp">
+
+      <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    
+    <!-- Le styles -->
+    <link href="{{MEDIA_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{MEDIA_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="{{MEDIA_URL}}bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{MEDIA_URL}}bootstrap/ico/apple-touch-icon-57-precomposed.png">
+
+
+<link href="{{MEDIA_URL}}ui.css" rel="stylesheet">
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+$(document).ready( function () {
+});
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+{%block extrahead %}
+
+<meta property="fb:app_id" content="{{FACEBOOK_ID}}" / 
+<meta property="og:type"   content="web" /> 
+<meta property="og:url"    content="http://{{SITE.domain}}" /> 
+<meta property="og:title"  content="Mandando chingadazos a tus amigos" /> 
+<meta property="og:description"  content="by FartApps" /> 
+<meta property="og:image"  content="http://{{SITE.domain}}{{MEDIA_URL}}chin.png" />
+
+{%endblock %}
+</head>
+
+  <body>
+
+ <div id="fb-root"></div>
+
+    <div class="container">
+      <div class="content">
+        <div class="page-header">
+          <h1>FartApp<small> Supporting text or tagline</small></h1>
+        </div>
+          <div class="row">
+            <div class="span2">
+              <!--content-->
+            </div>
+            <div class="span8">
+
+              {%block content %}
+              {% endblock %}
+            </div>
+            <div class="span2">
+              <!--content-->
+            </div>
+          </div>
+           </div>
+      <footer>
+        <p>Mady by FartApp 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+   
+  </body>
+</html>
