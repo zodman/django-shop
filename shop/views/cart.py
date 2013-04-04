@@ -42,7 +42,7 @@ class CartItemDetail(ShopView):
         RESTful URL (that should contain the item's ID):
 
         http://example.com/shop/cart/item/12345
-        """
+        """        
         cart_object = get_or_create_cart(self.request)
         item_id = self.kwargs.get('id')
         # NOTE: it seems logic to be in POST but as tests client shows
@@ -131,6 +131,7 @@ class CartDetails(ShopTemplateResponseMixin, CartItemDetail):
         quantity parameter to specify how many you wish to add at once
         (defaults to 1)
         """
+
         product_id = self.request.POST['add_item_id']
         product_quantity = self.request.POST.get('add_item_quantity')
         if not product_quantity:

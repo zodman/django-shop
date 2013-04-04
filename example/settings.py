@@ -104,6 +104,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    "templates",
 )
 
 # shop config
@@ -119,8 +120,9 @@ SHOP_PAYMENT_BACKENDS = (
 SHOP_SHIPPING_FLAT_RATE = "10.00"
 
 SHOP_CART_MODIFIERS = [
-        'shop.cart.modifiers.tax_modifiers.TenPercentGlobalTaxModifier',
-        'shop.cart.modifiers.rebate_modifiers.BulkRebateModifier',
+      #  'shop.cart.modifiers.tax_modifiers.TenPercentGlobalTaxModifier',
+      #  'shop.cart.modifiers.rebate_modifiers.BulkRebateModifier',
+      'shop_simplevariations.cart_modifier.ProductOptionsModifier',
         ]
 
 INSTALLED_APPS = (
@@ -139,6 +141,10 @@ INSTALLED_APPS = (
     'shop', # The django SHOP application
     'shop.addressmodel',
     'myshop', # the project we just created
+    'filer',
+    'easy_thumbnails',
+    'shop_simplevariations',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging

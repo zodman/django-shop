@@ -154,7 +154,6 @@ class BaseCart(models.Model):
             cart_item = CartItem.objects.create(
                 cart=self, quantity=quantity, product=product)
             cart_item.save()
-
         return cart_item
 
     def update_quantity(self, cart_item_id, quantity):

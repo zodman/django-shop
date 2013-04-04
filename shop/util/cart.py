@@ -33,6 +33,7 @@ def get_or_create_cart(request, save=False):
 
     If ``save`` is True, cart object will be explicitly saved.
     """
+
     cart = None
     if not hasattr(request, '_cart'):
         is_logged_in = request.user and not isinstance(request.user, AnonymousUser)
@@ -76,6 +77,5 @@ def get_or_create_cart(request, save=False):
             request.session['cart_id'] = cart.pk
 
         setattr(request, '_cart', cart)
-
     cart = getattr(request, '_cart')  # There we *must* have a cart
     return cart
