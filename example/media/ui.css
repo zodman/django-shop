@@ -1,0 +1,96 @@
+.menu  {
+
+	height: 140px;
+	width:100%;
+	background-color: #171A1A;
+}
+.padding-logo {
+	padding-top:5px;
+	padding-left:50px;
+	padding-right:50px;
+	display: inline;
+    float: left;
+    position: relative
+}
+#logo {
+	height: 120px;
+}
+
+.site-nav {
+    float: left;
+    height: 140px;
+    overflow: hidden;
+    width: auto;
+    margin-bottom:0px;
+}
+.site-nav li {
+	border-right: 1px solid rgba(255, 255, 255, 0.05);
+  	display: inline;
+    float: left;
+    height: 100%;
+    width: auto;
+
+
+}
+
+.site-nav > li > a {
+    color: #A5B1B1;
+     -moz-box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    height: 100%;
+    padding: 0 30px;
+    text-transform: uppercase;
+}
+.site-nav > li > a  span {
+
+ vertical-align: middle;
+    
+      display: inline-block;
+    height: 15px;
+    margin-top: 62px;
+}
+.site-nav > li > a:hover {
+    border-bottom: 3px solid #19B69E;
+}
+
+.myslider {
+	width: 100%;
+	height: 600px;
+	display: block; 
+	vertical-align: middle 
+}
+.myslider img {
+	display: block; 
+	margin-top:100px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 950px;
+	
+}
+
+.gray {
+	background: none repeat scroll 0 0 #9FA5A6;
+    overflow: hidden;
+    width: 100%;
+}
+
+.grayless {
+	width: 100%;
+	overflow: hidden;
+	 background: none repeat scroll 0 0 #E3E3E3;
+}
+
+.product{
+	margin:20px;
+	height:330px;
+	 background: none repeat scroll 0 0 white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+     -moz-box-sizing: border-box;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    
+}
