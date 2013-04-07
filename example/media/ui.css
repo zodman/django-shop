@@ -1,3 +1,8 @@
+@import url ("http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C700italic%2C400%2C300%2C700&ver=1.0");
+
+body {
+font-family: 'Open Sans', sans-serif;
+}
 .menu  {
 
 	height: 140px;
@@ -82,15 +87,50 @@
 	overflow: hidden;
 	 background: none repeat scroll 0 0 #E3E3E3;
 }
+.morelessgray{
+   	width: 100%;
+	overflow: hidden;
+    background: none repeat scroll 0 0 #F4F4F4;
+ 
+}
 
-.product{
+.product {
 	margin:20px;
-	height:330px;
-	 background: none repeat scroll 0 0 white;
+	height:380px;
+ background: none repeat scroll 0 0 white;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
      -moz-box-sizing: border-box;
-    height: auto;
     padding: 20px;
-    text-align: center;
-    
+    text-align: center;    
+}
+.product img {
+    width:100%;
+    height: 240px;
+
+}
+.product span.cost {
+    background: #19b69e;
+    padding: 15px;
+}
+.wel-small {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.dark {
+    color: #808992;
+
+    font-size:13px;
+    line-height: 20px;
+    font-weight: normal;
+    background: #323539;
+    -webkit-box-shadow: rgba(255,255,255,0.08) 0px 1px 0px inset;
+    box-shadow: rgba(255,255,255,0.08) 0px 1px 0px inset;
+
+
+}
+
+.dark div div {
+    margin:80px;
 }
