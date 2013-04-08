@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="fartApp">
 
-      <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     
     <!-- Le styles -->
     <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -27,10 +26,25 @@
 
 
 <link href="{{MEDIA_URL}}ui.css" rel="stylesheet">
+ <!-- Load JS here for greater good =============================-->
+    <script src="{{STATIC_URL}}bootstrap/js/jquery-1.8.2.min.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/jquery.dropkick-1.0.0.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/custom_checkbox_and_radio.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/custom_radio.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/jquery.tagsinput.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/jquery.placeholder.js"></script>
+    <script src="http://vjs.zencdn.net/c/video.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/application.js"></script>
+    <!--[if lt IE 8]>
+      <script src="{{STATIC_URL}}bootstrap/js/icon-font-ie7.js"></script>
+      <script src="{{STATIC_URL}}bootstrap/js/icon-font-ie7-24.js"></script>
+    <![endif]-->
 
-  <script type="text/javascript" src="{{STATIC_URL}}nivo/jquery.nivo.slider.js"></script>
-    <link rel="stylesheet" href="{{STATIC_URL}}nivo/nivo-slider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{STATIC_URL}}nivo/themes/light/light.css" type="text/css" media="screen" />
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+
+    {% block extrajs %}{%endblock%}
 </head>
 
   <body>
@@ -51,23 +65,28 @@
   {% block content %}
 <div class="row-fluid gray">
   <div class="span12">
-    <div class="myslider">
-        <!--script type="text/javascript">
-          $(window).ready(function() {
-              $('#slider').nivoSlider();
-          });
-        </script>
+<div id="sli">
+<script>
+$(document).ready(function(){
 
-        <div class="theme-light" >
-            <div id="slider" class="nivoSlider">
-               <img src="{{MEDIA_URL}}image/slider.png" alt=""  />
-               <img src="{{MEDIA_URL}}image/slider.png" alt=""  />
-               <img src="{{MEDIA_URL}}image/slider.png" alt=""  />
+  $("#myslider").carousel();
+});
+
+</script>
+    <div id="myslider" class="carousel slide">
+          <div class="carousel-inner">
+               <div class="item active"> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+               <div class="item "> <img src="{{MEDIA_URL}}image/slider.png" alt=""  /></div>
+               <div class="item "> <img src="{{MEDIA_URL}}image/slider2.png" alt=""  /></div>
+               <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+               <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+               <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
             </div>
-        </div-->
-          <img src="{{MEDIA_URL}}image/slider.png" alt=""  />
+         <a class="carousel-control left" href="#myslider" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myslider" data-slide="next">&rsaquo;</a>
       </div>
   </div>
+</div>
 </div>
 
 <div class="row-fluid grayless">
@@ -78,7 +97,7 @@
       asdsad
       </p>
       <a href="#">
-        <img class="" src="http://lorempixel.com/380/240/fashion">
+        <img class="" src="http://placekitten.com/380/240/">
       </a>
       <span class="palette palette-firm-dark">$ 999.99 MXN</span>
     </div>
@@ -90,7 +109,7 @@
       asdsad
       </p>
       <a href="">
-        <img class="" src="http://lorempixel.com/380/240/fashion/8">
+        <img class="" src="http://placekitten.com/380/240/">
       </a>
       <span class="palette palette-firm-dark">$ 999.99 MXN</span>
     </div>
@@ -102,7 +121,7 @@
       asdsad
       </p>
       <a href="">
-        <img class="" src="http://lorempixel.com/380/240/fashion/4">
+        <img class="" src="http://placekitten.com/380/240/">
       </a>
       <span class="palette palette-firm-dark">$ 999.99 MXN</span>
     </div>
@@ -116,7 +135,7 @@
   <div class="span3 ">
     <div class="medium-product ">
       <a href="">
-        <img class="" src="http://lorempixel.com/300/240/fashion/7">
+        <img class="" src="http://placekitten.com/300/240/">
       </a>
       <span class="palette palette-firm-dark">$ 999.99 MXN</span>
     </div>
@@ -124,7 +143,7 @@
   <div class="span3 ">
     <div class="medium-product ">
       <a href="">
-        <img class="" src="http://lorempixel.com/300/240/fashion/8">
+        <img class="" src="http://placekitten.com/300/240/">
       </a>
       <span class="palette palette-firm-dark">$ 999.99 MXN</span>
     </div>
@@ -132,7 +151,7 @@
   <div class="span3 ">
     <div class="medium-product ">
       <a href="">
-        <img class="" src="http://lorempixel.com/300/240/fashion/9">
+        <img class="" src="http://placekitten.com/300/240/">
       </a>
       <span class="palette palette-firm-dark">$ 999.99 MXN</span>
       <p>Designer #1</p>
@@ -141,7 +160,7 @@
   <div class="span3 ">
       <div class="medium-product ">
         <a href="">
-          <img class="" src="http://lorempixel.com/300/240/fashion/10">
+          <img class="" src="http://placekitten.com/300/240/">
         </a>
           <span class="palette palette-firm-dark">$ 999.99 MXN</span>
         <p>Designer #1</p>
