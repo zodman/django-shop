@@ -49,6 +49,11 @@ font-family: 'Open Sans', sans-serif;
     padding: 0 30px;
     text-transform: uppercase;
 }
+
+.site-nav  li  a:hover {
+    border-bottom: 3px solid #19B69E;
+}
+
 .site-nav > li > a  span {
 
  vertical-align: middle;
@@ -57,9 +62,7 @@ font-family: 'Open Sans', sans-serif;
     height: 15px;
     margin-top: 62px;
 }
-.site-nav > li > a:hover {
-    border-bottom: 3px solid #19B69E;
-}
+
 
 .myslider {
 	width: 100%;
@@ -85,7 +88,8 @@ font-family: 'Open Sans', sans-serif;
 .grayless {
 	width: 100%;
 	overflow: hidden;
-	 background: none repeat scroll 0 0 #E3E3E3;
+     background: none repeat scroll 0 0 #E3E3E3;
+     padding-top:30px;
 }
 .morelessgray{
    	width: 100%;
@@ -93,7 +97,19 @@ font-family: 'Open Sans', sans-serif;
     background: none repeat scroll 0 0 #F4F4F4;
  
 }
+.medium-product {
+	margin:20px;
+	height:250px;
+    background: none repeat scroll 0 0 white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+     -moz-box-sizing: border-box;
+    padding: 20px;
+    text-align: center;    
 
+}
+.medium-product p{
+    margin-top:50px;
+}
 .product {
 	margin:20px;
 	height:380px;
