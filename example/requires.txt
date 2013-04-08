@@ -6,7 +6,7 @@ django-extensions==1.1.1
 django-filer==0.9.3
 django-mptt==0.5.5
 django-polymorphic==0.4.0
-django-shop==0.1.2.dev0
+django-shop
 django-shop-simplevariations==0.0.4
 easy-thumbnails==1.2
 jsonfield==0.9.13
