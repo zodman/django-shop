@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'shop_simplevariations',
     'django_extensions',
+    'autofixture',
 )
 
 # A sample logging configuration. The only tangible logging

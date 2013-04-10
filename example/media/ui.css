@@ -50,9 +50,6 @@ font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
 }
 
-.site-nav  li  a:hover {
-    border-bottom: 3px solid #19B69E;
-}
 
 .site-nav > li > a  span {
 
@@ -62,6 +59,10 @@ font-family: 'Open Sans', sans-serif;
     height: 15px;
     margin-top: 62px;
 }
+.site-nav > li > a:hover {
+    border-bottom: 3px solid #19B69E;
+}
+
 
 #sli {
     height:600px;
