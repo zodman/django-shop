@@ -49,124 +49,124 @@
 
   <body>
 {% block body %}
-<div class="row-fluid menu">
-  <div class="span12">
-    <div class="padding-logo">
-        <img id="logo" src="http://i.imgur.com/TvLoWwq.png">
-    </div>
-    <ul class="site-nav">
-        <li><a href="#"><span>inicio</span></a></li>
-        <li><a href="#"><span>Zapatos</span></a></li>
-        <li><a href="#"><span>Ropa</span></a></li>
+  <div class="row-fluid menu">
+    <div class="span12">
+      <div class="padding-logo">
+          <img id="logo" src="http://i.imgur.com/TvLoWwq.png">
+      </div>
+      <ul class="site-nav">
+          <li><a href="#"><span>inicio</span></a></li>
+          <li><a href="#"><span>Zapatos</span></a></li>
+          <li><a href="#"><span>Ropa</span></a></li>
 
-    </ul>  
+      </ul>  
+    </div>
   </div>
-</div>
   {% block content %}
-<div class="row-fluid gray">
-  <div class="span12">
-<div id="sli">
-<script>
-$(document).ready(function(){
+        <div class="row-fluid gray">
+          <div class="span12">
+        <div id="sli">
+        <script>
+        $(document).ready(function(){
 
-  $("#myslider").carousel();
-});
+          $("#myslider").carousel();
+        });
 
-</script>
-    <div id="myslider" class="carousel slide">
-          <div class="carousel-inner">
-               <div class="item active"> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
-               <div class="item "> <img src="{{MEDIA_URL}}image/slider.png" alt=""  /></div>
-               <div class="item "> <img src="{{MEDIA_URL}}image/slider2.png" alt=""  /></div>
-               <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
-               <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
-               <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+        </script>
+            <div id="myslider" class="carousel slide">
+                  <div class="carousel-inner">
+                       <div class="item active"> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+                       <div class="item "> <img src="{{MEDIA_URL}}image/slider.png" alt=""  /></div>
+                       <div class="item "> <img src="{{MEDIA_URL}}image/slider2.png" alt=""  /></div>
+                       <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+                       <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+                       <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+                    </div>
+                 <a class="carousel-control left" href="#myslider" data-slide="prev">&lsaquo;</a>
+                  <a class="carousel-control right" href="#myslider" data-slide="next">&rsaquo;</a>
+              </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="row-fluid grayless">
+          <div class="span4">
+            <div class="product ">
+              <div class="well wel-small"> Test</div>
+              <p>
+              asdsad
+              </p>
+              <a href="#">
+                <img class="" src="http://placekitten.com/380/240/">
+              </a>
+              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
             </div>
-         <a class="carousel-control left" href="#myslider" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#myslider" data-slide="next">&rsaquo;</a>
-      </div>
-  </div>
-</div>
-</div>
+          </div>
+          <div class="span4 ">
+            <div class="product ">
+              <div class="well wel-small"> Test</div>
+              <p>
+              asdsad
+              </p>
+              <a href="">
+                <img class="" src="http://placekitten.com/380/240/">
+              </a>
+              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
+            </div>
+          </div>
+           <div class="span4 ">
+            <div class="product ">
+              <div class="well wel-small"> Test</div>
+              <p>
+              asdsad
+              </p>
+              <a href="">
+                <img class="" src="http://placekitten.com/380/240/">
+              </a>
+              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
+            </div>
+          </div>
+        </div>
 
-<div class="row-fluid grayless">
-  <div class="span4">
-    <div class="product ">
-      <div class="well wel-small"> Test</div>
-      <p>
-      asdsad
-      </p>
-      <a href="#">
-        <img class="" src="http://placekitten.com/380/240/">
-      </a>
-      <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-    </div>
-  </div>
-  <div class="span4 ">
-    <div class="product ">
-      <div class="well wel-small"> Test</div>
-      <p>
-      asdsad
-      </p>
-      <a href="">
-        <img class="" src="http://placekitten.com/380/240/">
-      </a>
-      <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-    </div>
-  </div>
-   <div class="span4 ">
-    <div class="product ">
-      <div class="well wel-small"> Test</div>
-      <p>
-      asdsad
-      </p>
-      <a href="">
-        <img class="" src="http://placekitten.com/380/240/">
-      </a>
-      <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-    </div>
-  </div>
-</div>
-
-<div class="row-fluid morelessgray">
-    <div class="well">Ultimos productos</div>
-</div>
-<div class="row-fluid morelessgray">
-  <div class="span3 ">
-    <div class="medium-product ">
-      <a href="">
-        <img class="" src="http://placekitten.com/300/240/">
-      </a>
-      <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-    </div>
-  </div>
-  <div class="span3 ">
-    <div class="medium-product ">
-      <a href="">
-        <img class="" src="http://placekitten.com/300/240/">
-      </a>
-      <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-    </div>
-  </div>
-  <div class="span3 ">
-    <div class="medium-product ">
-      <a href="">
-        <img class="" src="http://placekitten.com/300/240/">
-      </a>
-      <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-      <p>Designer #1</p>
-    </div>
-  </div>
-  <div class="span3 ">
-      <div class="medium-product ">
-        <a href="">
-          <img class="" src="http://placekitten.com/300/240/">
-        </a>
-          <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-        <p>Designer #1</p>
-      </div>
-    </div>
-</div>
+        <div class="row-fluid morelessgray">
+            <div class="well">Ultimos productos</div>
+        </div>
+        <div class="row-fluid morelessgray">
+          <div class="span3 ">
+            <div class="medium-product ">
+              <a href="">
+                <img class="" src="http://placekitten.com/300/240/">
+              </a>
+              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
+            </div>
+          </div>
+          <div class="span3 ">
+            <div class="medium-product ">
+              <a href="">
+                <img class="" src="http://placekitten.com/300/240/">
+              </a>
+              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
+            </div>
+          </div>
+          <div class="span3 ">
+            <div class="medium-product ">
+              <a href="">
+                <img class="" src="http://placekitten.com/300/240/">
+              </a>
+              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
+              <p>Designer #1</p>
+            </div>
+          </div>
+          <div class="span3 ">
+              <div class="medium-product ">
+                <a href="">
+                  <img class="" src="http://placekitten.com/300/240/">
+                </a>
+                  <span class="palette palette-firm-dark">$ 999.99 MXN</span>
+                <p>Designer #1</p>
+              </div>
+            </div>
+        </div>
   {% endblock content %}
 
   <div class="row-fluid dark">

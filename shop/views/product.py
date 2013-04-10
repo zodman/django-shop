@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from shop.models.productmodel import Product
 from shop.views import ShopDetailView
+from example.myshop.models import Category
 
 
 class ProductDetailView(ShopDetailView):
@@ -13,7 +14,7 @@ class ProductDetailView(ShopDetailView):
     """
     model = Product  # It must be the biggest ancestor of the inheritence tree.
     generic_template = 'shop/product_detail.html'
-
+   
     def get_template_names(self):
         ret = super(ProductDetailView, self).get_template_names()
         if not self.generic_template in ret:

@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from .myshop.views import MyOrderConfirmView
+from .myshop.views import MyOrderConfirmView, products_view
 from shop_simplevariations import urls as simplevariations_urls
 from shop import urls as shop_urls
 from django.contrib import admin
@@ -13,8 +13,8 @@ urlpatterns = patterns('',
 
     url(r'^checkout/confirm/$', MyOrderConfirmView.as_view(), name='checkout_shipping'),
    (r'^cart/', include(simplevariations_urls)),
-
-    (r'^', include(shop_urls)), # <-- That's the important bit
+    (r'^products/',products_view),
+    (r'^', include(shop_urls)), 
 
 
 )
