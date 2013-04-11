@@ -1,3 +1,4 @@
+{% load myshop_tags %}
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
@@ -55,10 +56,7 @@
           <img id="logo" src="http://i.imgur.com/TvLoWwq.png">
       </div>
       <ul class="site-nav">
-          <li><a href="#"><span>inicio</span></a></li>
-          <li><a href="#"><span>Zapatos</span></a></li>
-          <li><a href="#"><span>Ropa</span></a></li>
-
+          {%show_menu %}
       </ul>  
     </div>
   </div>
@@ -75,12 +73,10 @@
         </script>
             <div id="myslider" class="carousel slide">
                   <div class="carousel-inner">
-                       <div class="item active"> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
-                       <div class="item "> <img src="{{MEDIA_URL}}image/slider.png" alt=""  /></div>
+                    <div class="item active"><img src="http://i.imgur.com/Mj2kO4p.png"></div>
+                    
                        <div class="item "> <img src="{{MEDIA_URL}}image/slider2.png" alt=""  /></div>
-                       <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
-                       <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
-                       <div class="item "> <img src="http://placekitten.com/g/900/600/" alt=""  /></div>
+
                     </div>
                  <a class="carousel-control left" href="#myslider" data-slide="prev">&lsaquo;</a>
                   <a class="carousel-control right" href="#myslider" data-slide="next">&rsaquo;</a>
@@ -97,7 +93,7 @@
               asdsad
               </p>
               <a href="#">
-                <img class="" src="http://placekitten.com/380/240/">
+                <img class="" src="http://placehold.it/500x240/">
               </a>
               <span class="palette palette-firm-dark">$ 999.99 MXN</span>
             </div>
@@ -109,7 +105,7 @@
               asdsad
               </p>
               <a href="">
-                <img class="" src="http://placekitten.com/380/240/">
+                <img class="" src="http://placehold.it/500x240/">
               </a>
               <span class="palette palette-firm-dark">$ 999.99 MXN</span>
             </div>
@@ -121,7 +117,7 @@
               asdsad
               </p>
               <a href="">
-                <img class="" src="http://placekitten.com/380/240/">
+                <img class="" src="http://placehold.it/500x240">
               </a>
               <span class="palette palette-firm-dark">$ 999.99 MXN</span>
             </div>

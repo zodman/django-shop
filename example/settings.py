@@ -145,7 +145,7 @@ INSTALLED_APPS = (
     'filer',
     'easy_thumbnails',
     'shop_simplevariations',
-    'django_extensions',
+   # 'django_extensions',
     'autofixture',
 )
 

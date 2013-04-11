@@ -4,12 +4,14 @@ from shop.models.productmodel import Product as ProductShop
     
 class Category(models.Model):
 	name = models.CharField(max_length=100)
+	slug = models.SlugField()
 	
 	def __unicode__(self):
 		return self.name
 
 class Manufacture(models.Model):
 	name = models.CharField(max_length=100)
+	slug = models.SlugField()
 
 	def __unicode__(self):
 		return self.name
