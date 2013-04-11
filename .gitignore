@@ -1,4 +1,7 @@
 *.pyc
+*.wsgi
+*.db
+*.ini
 .project
 .pydevproject
 .settings
