@@ -108,7 +108,6 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_PATH,"templates"),
 )
-
 # shop config
 SHOP_SHIPPING_BACKENDS = (
     'shop.shipping.backends.flat_rate.FlatRateShipping',
