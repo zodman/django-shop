@@ -13,8 +13,8 @@ class Category(models.Model):
 class Manufacture(models.Model):
 	name = models.CharField(max_length=100)
 	slug = models.SlugField()
-	logo = FilerImageField()
-	logo_front = FilerImageField()
+	logo = FilerImageField(related_name="manufatures")
+	logo_front = FilerImageField(related_name="manufactures")
 
 	def __unicode__(self):
 		return self.name

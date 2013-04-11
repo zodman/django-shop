@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 from django.conf.urls.defaults import *
 from .myshop.views import MyOrderConfirmView, products_view
 from shop_simplevariations import urls as simplevariations_urls
-=======
-from django.conf.urls import patterns, include, url
 from example.myshop.views import MyOrderConfirmView
-
->>>>>>> 7675ef4ca59336c42c117aab6a713f651f9c3458
 from shop import urls as shop_urls
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
