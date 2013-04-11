@@ -15,6 +15,7 @@ class Manufacture(models.Model):
 	slug = models.SlugField()
 	logo = FilerImageField(related_name="manufatures")
 	logo_front = FilerImageField(related_name="manufactures")
+        url = models.CharField(max_length = 500, blank=True, null =True)
 
 	def __unicode__(self):
 		return self.name

@@ -74,7 +74,9 @@
             <div id="myslider" class="carousel slide">
                   <div class="carousel-inner">
                     {%for manufacture in manufactures %}
-                    <div class="item "> <img src="{% thumbnail manufacture.logo_front 800x600 %}" alt=""  /></div>
+                    <div class="item {%if foorloop.first%}active{%endif%}"> 
+                              <img src="{% thumbnail manufacture.logo_front 800x600 %}" alt=""  />
+                    </div>
                       {%endfor %}
                     </div>
                  <a class="carousel-control left" href="#myslider" data-slide="prev">&lsaquo;</a>
@@ -132,7 +134,12 @@
     </div>   
     <div class="span7 "> 
       <div>
-        <h3>Testimonios</h3>
+        <h3>Contacto</h3>
+<div style="border: 1px solid #E5E5E5; padding: 5px; height: 100px;">
+<h1>Contacto</h1>
+<p><span style="color: #ff0000;">CEO. Mónica A. Aguilar Gomez</span></p>
+<p><a href="/contact">Para contactarnos y saber más sobre el proyecto</a></p>
+</div>
       </div>
     </div>   
   </div>
