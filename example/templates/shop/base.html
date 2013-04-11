@@ -106,41 +106,19 @@
             <div class="well">Ultimos productos</div>
         </div>
         <div class="row-fluid morelessgray">
+          {%for product in lastest_products %}
           <div class="span3 ">
+
             <div class="medium-product ">
               <a href="">
-                <img class="" src="http://placekitten.com/300/240/">
+                <img class="" src="{% thumbnail product.image 300x340 %}">
               </a>
-              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
+              <span class="palette palette-firm-dark">$ {{product.unit_price}}  MXN</span>
             </div>
+
           </div>
-          <div class="span3 ">
-            <div class="medium-product ">
-              <a href="">
-                <img class="" src="http://placekitten.com/300/240/">
-              </a>
-              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-            </div>
-          </div>
-          <div class="span3 ">
-            <div class="medium-product ">
-              <a href="">
-                <img class="" src="http://placekitten.com/300/240/">
-              </a>
-              <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-              <p>Designer #1</p>
-            </div>
-          </div>
-          <div class="span3 ">
-              <div class="medium-product ">
-                <a href="">
-                  <img class="" src="http://placekitten.com/300/240/">
-                </a>
-                  <span class="palette palette-firm-dark">$ 999.99 MXN</span>
-                <p>Designer #1</p>
-              </div>
-            </div>
-        </div>
+          {%endfor %}
+       </div>
   {% endblock content %}
 
   <div class="row-fluid dark">
