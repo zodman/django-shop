@@ -1,6 +1,7 @@
 from django.db import models
 from polymorphic.manager import PolymorphicManager
 from shop.models.productmodel import Product as ProductShop
+from filer.fields.image import FilerImageField
     
 class Category(models.Model):
 	name = models.CharField(max_length=100)
@@ -12,6 +13,7 @@ class Category(models.Model):
 class Manufacture(models.Model):
 	name = models.CharField(max_length=100)
 	slug = models.SlugField()
+	logo = FilerImageField()
 
 	def __unicode__(self):
 		return self.name

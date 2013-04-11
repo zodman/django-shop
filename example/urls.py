@@ -10,10 +10,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-
     url(r'^checkout/confirm/$', MyOrderConfirmView.as_view(), name='checkout_shipping'),
    (r'^cart/', include(simplevariations_urls)),
     (r'^products/',products_view),
+   url(r'^', include('filer.server.urls')),
     (r'^', include(shop_urls)), 
 
 

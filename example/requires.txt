@@ -1,12 +1,13 @@
 Django==1.5.1
 PIL==1.1.7
 South==0.7.6
+django-autofixture==0.3.0
 django-classy-tags==0.4
 django-extensions==1.1.1
-django-filer==0.9.3
+django-filer==0.9.4a1
 django-mptt==0.5.5
 django-polymorphic==0.4.0
-django-shop
+-e git+https://zodman:turish254+B@github.com/zodman/django-shop.git@d3db93529a76727b0cf7f9ab9070c59f5a5db82a#egg=django_shop-dev
 django-shop-simplevariations==0.0.4
 easy-thumbnails==1.2
 jsonfield==0.9.13
