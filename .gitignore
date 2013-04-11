@@ -24,3 +24,4 @@ database.db
 .idea
 .ropeproject
 example/static
+example/media/filer_public*

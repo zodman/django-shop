@@ -1,12 +1,19 @@
 from django.contrib import admin
 
-from .models import Product, Category, Manufacture
+from .models import Product, Category, Manufacture, ProductImage
 
 
 class BookAdmin(admin.ModelAdmin):
-    pass
+        prepopulated_fields = {"slug": ("name",)}
 
-admin.site.register(Product)
-admin.site.register(Category)
-admin.site.register(Manufacture)
+class ImageInline(admin.TabularInline):
+        model = ProductImage
+
+class ProductAdmin(BookAdmin):
+    inlines = [ImageInline,]
+
+
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Category, BookAdmin)
+admin.site.register(Manufacture, BookAdmin)
 

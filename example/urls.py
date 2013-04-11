@@ -7,6 +7,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
+from example.myshop.views import welcome_view
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -14,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^checkout/confirm/$', MyOrderConfirmView.as_view(), name='checkout_shipping'),
    (r'^cart/', include(simplevariations_urls)),
     (r'^products/',products_view),
+    url(r"^$",welcome_view, name="welcome"),
    url(r'^', include('filer.server.urls')),
     (r'^', include(shop_urls)), 
 

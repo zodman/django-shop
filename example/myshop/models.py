@@ -23,8 +23,11 @@ class Product(ProductShop):
 	description = models.TextField()
 	category = models.ForeignKey(Category, related_name="products")
 	manufacture = models.ForeignKey(Manufacture, related_name='products')
+        image = FilerImageField(related_name="products")
+
 	class Meta:
 		pass
 
 class ProductImage(models.Model):
 	product = models.ForeignKey(Product)
+        image = FilerImageField(related_name="productimages")

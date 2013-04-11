@@ -3,8 +3,22 @@ from django.views.generic import FormView
 from shop.util.order import get_order_from_request
 from django import forms
 from shop.models import Order
-from shop.views import ShopListView
-from .models import Category, Product
+from shop.views import ShopListView, ShopTemplateView
+from .models import Category, Product, Manufacture
+from django.views import generic
+
+class WelcomeView(ShopTemplateView):
+    template_name="shop/welcome.html"
+
+    def get_context_data(self):
+        context = {
+            'products': Product.objects.all()[0:3],
+            "lastest_products": Product.objects.all().order_by("-id")[0:4],
+            "manufactures":Manufacture.objects.all(),
+            }
+        return context
+
+welcome_view = WelcomeView.as_view()
 
 class ProductListView(ShopListView):
     model = Product
