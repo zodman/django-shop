@@ -50,16 +50,18 @@
 
   <body>
 {% block body %}
-  <div class="row-fluid menu">
+  <div class="row-fluid menu ">
     <div class="span12">
       <div class="padding-logo">
-        <a href="/"><img id="logo" src="http://i.imgur.com/TvLoWwq.png"></a>
+        <a href="/"><img id="logo" src="{{MEDIA_URL}}image/logo.png"></a>
       </div>
       <ul class="site-nav">
           {%show_menu %}
       </ul>  
     </div>
   </div>
+
+
   {% block content %}
         <div class="row-fluid gray">
           <div class="span12">
@@ -74,7 +76,7 @@
             <div id="myslider" class="carousel slide">
                   <div class="carousel-inner">
                     {%for manufacture in manufactures %}
-                    <div class="item {%if foorloop.first%}active{%endif%}"> 
+                    <div class="item {%if forloop.first %}active{%endif%}"> 
                               <img src="{% thumbnail manufacture.logo_front 800x600 %}" alt=""  />
                     </div>
                       {%endfor %}
@@ -89,17 +91,17 @@
         <div class="row-fluid grayless">
           {%for product in products %}
           <div class="span4">
-            <div class="product ">
-              <div class="well wel-small"> {{product.name}}</div>
-              <p>
-              {{product.category.name}}
-              </p>
-              <a href="#">
-                <img class="" src="{% thumbnail product.image 300x220 %}">
-              </a>
-              <span class="palette palette-firm-dark">$ {{product.unit_price}} MXN</span>
-            </div>
-           </div>
+                <div class="product ">
+                    <div class="well wel-small"> {{product.name}}</div>
+                        <p>
+                        {{product.category.name}}
+                        </p>
+                        <a href="#">
+                          <img class="" src="{% thumbnail product.image 300x220 %}">
+                        </a>
+                        <div class="clearfix"></div>
+                        <span class="palette palette-firm-dark">$ {{product.unit_price}} MXN</span>
+                </div>
           </div>
           {% endfor %}
         </div>
@@ -115,6 +117,7 @@
               <a href="">
                 <img class="" src="{% thumbnail product.image 300x340 %}">
               </a>
+                <div class="clearfix"></div>
               <span class="palette palette-firm-dark">$ {{product.unit_price}}  MXN</span>
             </div>
 
@@ -135,10 +138,9 @@
     <div class="span7 "> 
       <div>
         <h3>Contacto</h3>
-<div style="border: 1px solid #E5E5E5; padding: 5px; height: 100px;">
-<h1>Contacto</h1>
+<div >
 <p><span style="color: #ff0000;">CEO. Mónica A. Aguilar Gomez</span></p>
-<p><a href="/contact">Para contactarnos y saber más sobre el proyecto</a></p>
+<p><a href="/">Para contactarnos y saber más sobre el proyecto</a></p>
 </div>
       </div>
     </div>   
