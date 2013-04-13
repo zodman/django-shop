@@ -96,7 +96,7 @@
                         <p>
                         {{product.category.name}}
                         </p>
-                        <a href="#">
+                        <a href="{% url 'product_detail' product.slug %}">
                           <img class="" src="{% thumbnail product.image 300x220 %}">
                         </a>
                         <div class="clearfix"></div>
@@ -114,7 +114,7 @@
           <div class="span3 ">
 
             <div class="medium-product ">
-              <a href="">
+              <a href="{% url 'product_detail' product.slug %}">
                 <img class="" src="{% thumbnail product.image 300x340 %}">
               </a>
                 <div class="clearfix"></div>

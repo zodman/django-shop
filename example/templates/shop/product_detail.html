@@ -1,61 +1,130 @@
 {% extends "shop/base.html" %}
 {% load url from future %}
-{% load simplevariation_tags %}
-{% block body %}
-aaaaaaaaaaaa
-  <h1>Product detail:</h1>
-  {{object.get_name}}<br />
-  {{object.slug}}<br />
-  {{object.short_description}}<br />
-  {{object.long_description}}<br />
-  {{object.active}}<br />
+{% load simplevariation_tags thumbnail %}
+{% block extrajs %}
+<script type="text/javascript">
+$(document).ready(function(){
+$(".thumbnails li a").live("click", function(evnt){
+evnt.preventDefault();
+console.log("click");
+var id = $(this).attr("href").split("_")[1];
+console.log("id",id)
+var imgs = $(".main-image >img");
+console.log(imgs);
+imgs.hide();
+var img = $(".main-image").find("#img_" +id);
+img.show();
+})
+});
+</script>
+{% endblock  %}
+{% block content %}
+<div class="row-fluid colormorelessgray center">
+    <div class="span12" style="height:250px;">
+        <img src="{% thumbnail object.manufacture.image 200x200 %}" style="margin-top: 50px;">
+    </div>
+  </div>
 
-  {{object.date_added}}<br />
-  {{object.last_modified}}<br />
+<div class="container-fluid lessgray">
 
-  {{object.unit_price}}<br />
+  
 
-  {% if object.category %}
-  {{object.category.name}}
-  {% else %}
-  (Product is at root category)
-  {% endif %}
-  <br />
-
-  <form method="post" action="{% url 'cart' %}">{% csrf_token %}
-
-{% with option_groups=object|get_option_groups %}
-  {% if option_groups %}
-    <div>
-      <h2>Variations:</h2>
-      {% for option_group in option_groups %}
-        <label for="add_item_option_group_{{ option_group.id }}">{{ option_group.name }}</label>
-        {% with option_group|get_options as options %}
-          <select name="add_item_option_group_{{ option_group.id }}">
-            {% for option in options %}
-              <option value="{{ option.id }}">{{ option.name }}</option>
-            {% endfor %}
-          </select>
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="well spaceup main-image">
+        
+        <img   id="img_0" src="{{object.image.url}}"/>
+        {% for img in object.images.all %}
+        <img style="display:none;" id="img_{{img.pk}}" src="{{img.image.url}}"/>
+        {% endfor %}
+      </div>
+      <div class="spaceup">
+        <ul class="thumbnails no-space">
+          <li class="span3">
+            <a href="#image_0">
+            <img class="show"  src="{% thumbnail object.image 148x148 crop %}"/>
+            </a>
+          </li>
+          {% for img in object.images.all %}
+          <li class="span3">
+            <a href="#image_{{img.pk}}">
+            <img src="{% thumbnail img.image 148x148 crop%}" />
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="spaceup">
+        <div class="">
+          <table class="table  table-bordered ">
+            <thead>
+              <tr class="palette palette-night">
+                <th>
+                  Descripcion:
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  {{object.description}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="span6 spaceup">
+      <div class="tile">
+        <h3 class="tile-title palette palette-night">{{object.get_name}}</h3>
+        
+        
+        <h2> $ {{object.unit_price}} MXN </h2>
+        
+      </div>
+      <form class="form-horizontal spaceup" method="post" action="{% url 'cart' %}">{% csrf_token %}
+        {% with option_groups=object|get_option_groups %}
+        {% if option_groups %}
+        
+          {% for option_group in option_groups %}
+          <div class="control-group">
+              <label class="control-label" for="add_item_option_group_{{ option_group.id }}">
+                {{ option_group.name }}:
+              </label>
+              <div class="controls span4">
+                {% with option_group|get_options as options %}
+                <select class="span4" name="add_item_option_group_{{ option_group.id }}">
+                  {% for option in options %}
+                  <option value="{{ option.id }}">{{ option.name }}</option>
+                  {% endfor %}
+                </select>
+                {% endwith %}
+                </div>
+          </div> 
+          {% endfor %}
+          
+        
+        {% endif %}
         {% endwith %}
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endwith %}
-{% with text_options=object.text_options.all %}
-  {% if text_options %}
-    <div>
-      <h2>Text options:</h2>
-      {% for text_option in text_options %}
-        <label for="add_item_text_option_{{ text_option.id }}">{{ text_option.name }}</label>
-        <input type="text" name="add_item_text_option_{{ text_option.id }}" value=""/>
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endwith %}
 
-  <input type="hidden" name="add_item_id" value="{{object.pk}}">
-  <input type="hidden" name="add_item_quantity" value="1">
-  <input type="submit" value="Add to cart">
-  </form>
+
+        {% with text_options=object.text_options.all %}
+        {% if text_options %}
+        <div>
+          <h2>Text options:</h2>
+          {% for text_option in text_options %}
+          <label for="add_item_text_option_{{ text_option.id }}">{{ text_option.name }}</label>
+          <input type="text" name="add_item_text_option_{{ text_option.id }}" value=""/>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <input type="hidden" name="add_item_id" value="{{object.pk}}">
+        <input type="hidden" name="add_item_quantity" value="1">
+        <input type="submit" class="btn btn-large btn-block btn-danger" value="Add to cart">
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
-
