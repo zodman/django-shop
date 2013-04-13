@@ -1,5 +1,5 @@
 	{% for category in categories %}
-		<li><a href="#{{category.slug}}"><span>{{category.name}}</span></a></li>
+		<li><a href="{% url "category_detail" category.slug %}"><span>{{category.name}}</span></a></li>
 	{% endfor %}
 		
           

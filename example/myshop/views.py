@@ -30,6 +30,18 @@ class ProductListView(ShopListView):
         return context 
 products_view = ProductListView.as_view()
 
+
+class CategoryView(generic.DetailView):
+    model = Category
+    template_name = "shop/product_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryView, self).get_context_data(**kwargs)
+        context.update({'object_list':self.object.products.active()})
+        return context 
+        
+category_view = CategoryView.as_view()
+
 class TermsOfServiceForm(forms.Form):
     agree = forms.BooleanField(required=True, initial=False, label='I agree to the Terms of Service')
 

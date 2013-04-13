@@ -4,12 +4,13 @@ from .models import Product, Category, Manufacture, ProductImage
 
 
 class BookAdmin(admin.ModelAdmin):
-        prepopulated_fields = {"slug": ("name",)}
+    prepopulated_fields = {"slug": ("name",)}
 
 class ImageInline(admin.TabularInline):
-        model = ProductImage
+    model = ProductImage
 
 class ProductAdmin(BookAdmin):
+    list_display = ("name","active")
     inlines = [ImageInline,]
 
 

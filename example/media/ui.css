@@ -160,3 +160,29 @@ min-height: 0px;
 .dark div div {
     margin:80px;
 }
+
+
+.product-list {
+
+    margin:20px;
+    height:330px;
+     background: none repeat scroll 0 0 white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+     -moz-box-sizing: border-box;
+    padding: 20px;
+    text-align: center;  
+}
+
+.product-list img {
+    height:300px;
+
+}
+
+.product-list .name {
+    width:100%;
+    padding-bottom:10px;
+}
+
+.noleftmargin {
+    margin-left:0px;
+}

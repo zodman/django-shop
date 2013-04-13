@@ -1,42 +1,31 @@
 {% extends "shop/base.html" %}
-{% load i18n %}
-
+{% load i18n thumbnail %}
 {% block content %}
-<div class="row-fluid">
-  <div class="span9 offset1">
-      {%for i in categories%} 
-      <div class="palette palette-clouds">{{i.name}}</div>
+
+
+<div class="row-fluid gray">
+  <div class="well"><h1>{{object.name}}</h1></div>
+  
+    <div class="row-fluid">
+      {% for object in object_list %}      
+      <div class="span3"  {%if forloop.counter|divisibleby:"4"%} style="margin-left:0px;" {%endif%}>
+        <div class="product-list">
+          <div class="name">
+            <a href="{% url 'product_detail' object.slug %}">
+              <b>{{object.get_name}}</b>
+            </a>
+          </div>
+          <a href="{% url 'product_detail' object.slug %}">
+              <img src="{% thumbnail object.image 300x400 %}">
+          </a>
+          <div class="clearfix"></div>
+          <span class="palette palette-firm-dark">$ {{object.unit_price}} MXN</span>
+        </div>
+      </div>
+      
       {% endfor %}
-  </div>
+    </div>
+  
 </div>
-
-
-<div class="row-fluid">
-  <div class="span9 offset1">
-  <h1>Todos los productos</h1>
-
-   {% for object in object_list %}
-  <a href="{% url 'product_detail' object.slug %}">{{object.get_name}}</a><br />
-  {{object.slug}}<br />
-  {{object.short_description}}<br />
-  {{object.long_description}}<br />
-  {{object.active}}<br />
-
-  {{object.date_added}}<br />
-  {{object.last_modified}}<br />
-
-  {{object.unit_price}}<br />
-
-  {% if object.category %}
-  {{object.category.name}}<br />
-  {% else %}
-  (Product is at root category)<br />
-  {% endif %}
-  <hr />
-
-  {% endfor %}
-
-  </div>
 </div>
 {% endblock %}
-
