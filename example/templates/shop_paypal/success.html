@@ -1,4 +1,16 @@
-{% load i18n %}
+{% extends "shop/base.html" %}
+{% load i18n  thumbnail %}
+{% load url from future %}
+{% block content %}
+<div class="row-fluid lessgray">
+
 
 <h1>{% trans "Paypal" %}</h1>
 <p>{% trans "Payment was successful." %}</p>
+
+  </div>
+  
+</div>
+
+{% endblock %}
+
