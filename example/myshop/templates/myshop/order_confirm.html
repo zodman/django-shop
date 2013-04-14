@@ -1,8 +1,32 @@
-{% load shop_tags %}
-<h1>Please confirm you order before proceeding to payment</h1>
+{% extends "shop/base.html" %}
+{% load i18n  thumbnail  shop_tags %}
+{% load url from future %}
+
+{% block content %}
+
+<div class="row-fluid lessgray">
+  <div class="well">
+		<h1>Confirmar orden</h1>
+
+  </div>
+  
+</div>
+
+
+
+<div class="container-fluid lessgray">
+  <div class="offset2 span10">
+
 {% order order %}
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Confirm" />
+    <input class="btn btn-block" type="submit" value="Confirm" />
 </form>
+
+</div>
+
+</div>
+
+
+{% endblock %}
