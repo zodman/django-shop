@@ -1,14 +1,21 @@
 Django==1.5.1
+Fabric==1.6.0
 PIL==1.1.7
 South==0.7.6
+Werkzeug==0.8.3
 django-autofixture==0.3.0
 django-classy-tags==0.4
 django-extensions==1.1.1
-django-filer==0.9.4a1
+django-filer==0.9.4
 django-mptt==0.5.5
-django-polymorphic==0.4.0
--e git+https://zodman:turish254+B@github.com/zodman/django-shop.git@d3db93529a76727b0cf7f9ab9070c59f5a5db82a#egg=django_shop-dev
-django-shop-simplevariations==0.0.4
+django-paypal==0.1.2
+django-polymorphic==0.4.2
+-e git+git@github.com:zodman/django-shop.git@b3831fb20856be452ee1893b824d31431ea480ca#egg=django_shop-dev
+-e git://github.com/chrisglass/django-shop-paypal.git@5f26f12667890b71c1e8f112de8ba240197898fa#egg=django_shop_paypal-dev
+-e git://github.com/chrisglass/django-shop-simplevariations.git@d3551fce12426abc7a9f2193cdfcd0a7b47a61e5#egg=django_shop_simplevariations-dev
+django-werkzeug-debugger-runserver==0.1.2
 easy-thumbnails==1.2
 jsonfield==0.9.13
+paramiko==1.10.1
+pycrypto==2.6
 six==1.3.0

@@ -113,12 +113,14 @@ SHOP_SHIPPING_BACKENDS = (
     'shop.shipping.backends.flat_rate.FlatRateShipping',
 )
 
+
+
 SHOP_PAYMENT_BACKENDS = (
     #'shop.payment.backends.pay_on_delivery.PayOnDeliveryBackend',
+    'shop_paypal.offsite_paypal.OffsitePaypalBackend',
     'myshop.payment.ExamplePayment',
 )
 
-SHOP_SHIPPING_FLAT_RATE = "10.00"
 
 SHOP_CART_MODIFIERS = [
       #  'shop.cart.modifiers.tax_modifiers.TenPercentGlobalTaxModifier',
@@ -147,6 +149,8 @@ INSTALLED_APPS = (
     'shop_simplevariations',
    # 'django_extensions',
     'autofixture',
+    'paypal.standard.ipn',
+    'shop_paypal',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -171,6 +175,10 @@ LOGGING = {
         },
     }
 }
+
+PAYPAL_RECEIVER_EMAIL ="zodman@gmail.com"
+PAYPAL_CURRENCY_CODE="MXN"
+PAYPAL_LC="MX"
 
 try:
     from local_settings import *
