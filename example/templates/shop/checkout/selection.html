@@ -1,0 +1,40 @@
+{% extends "shop/base.html" %}
+{% block content %}
+<div class="row-fluid">
+  <div class="well">
+    <h1>Shipping and Billing</h1>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <form method="POST">
+    {% csrf_token %}
+<div class="row-fluid">
+
+    <div class="span4">
+      <h3>Your shipping address</h3>
+      {{ shipping_address.as_p }}
+    </div>
+    <div class="span4">
+      <h3>Your billing address</h3>
+      {{ billing_address.as_p }}
+    </div>
+    <div class="span4">
+      <h3>Payment and Shipping Methods</h3>
+      {{ billing_shipping_form.as_p }}
+      
+      <h3>Extra info</h3>
+      {{ extra_info_form.as_p }}
+  
+    </div>
+</div>
+
+
+<div class="row-fluid">
+  <div class="span8 offset2">
+    <input type="submit" class="btn btn-block btn-large" value="Enviar">
+  </div>
+</div>
+</form>
+</div>
+{% endblock %}

@@ -2,6 +2,8 @@ from django.db import models
 from polymorphic.manager import PolymorphicManager
 from shop.models.productmodel import Product as ProductShop
 from filer.fields.image import FilerImageField
+from django.core.urlresolvers import reverse_lazy as reverse
+
     
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -28,6 +30,9 @@ class Product(ProductShop):
     manufacture = models.ForeignKey(Manufacture, related_name='products')
     image = FilerImageField(related_name="products")
 
+
+    def get_absolute_url(self):
+        return reverse("product_detail", args=[self.slug])
     class Meta:
         pass
 
