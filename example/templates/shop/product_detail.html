@@ -88,20 +88,24 @@ img.show();
         {% if option_groups %}
         
           {% for option_group in option_groups %}
-          <div class="control-group">
-              <label class="control-label" for="add_item_option_group_{{ option_group.id }}">
+            <div class="row-fluid">
+              <div class="span4">
+
+              <label class="" for="add_item_option_group_{{ option_group.id }}">
                 {{ option_group.name }}:
               </label>
-              <div class="controls span4">
+              </div>
+              <div class="span8">
+              
                 {% with option_group|get_options as options %}
-                <select class="span4" name="add_item_option_group_{{ option_group.id }}">
+                <select class="span6" name="add_item_option_group_{{ option_group.id }}">
                   {% for option in options %}
                   <option value="{{ option.id }}">{{ option.name }}</option>
                   {% endfor %}
                 </select>
                 {% endwith %}
-                </div>
-          </div> 
+              </div>  
+          </div>
           {% endfor %}
           
         
