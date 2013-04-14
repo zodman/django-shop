@@ -37,7 +37,7 @@ class CategoryView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CategoryView, self).get_context_data(**kwargs)
-        context.update({'object_list':self.object.products.active()})
+        context.update({'object_list':self.object.products.filter(active=True)})
         return context 
         
 category_view = CategoryView.as_view()
