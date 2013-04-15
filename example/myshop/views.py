@@ -51,8 +51,8 @@ class CategoryView(generic.DetailView):
         products = self.object.products.filter(active=True)
         manufacture_list = products.values_list('manufacture__id', flat =True)
         manufactures = Manufacture.objects.filter(id__in=manufacture_list).distinct()
-        
         context.update({'object_list':manufactures})
+      
         return context 
         
 category_view = CategoryView.as_view()
