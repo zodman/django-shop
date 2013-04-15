@@ -95,7 +95,9 @@
           <div class="carousel-inner">
             {%for manufacture in manufactures %}
             <div class="item {%if forloop.first %}active{%endif%}">
-              <img src="{% thumbnail manufacture.logo_front 800x600 %}" alt=""  />
+            
+                <img src="{% thumbnail manufacture.logo_front 800x600 %}" alt=""  />
+            
             </div>
             {%endfor %}
           </div>

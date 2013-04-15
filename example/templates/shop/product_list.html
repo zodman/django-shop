@@ -16,26 +16,30 @@
 
 
 {% block content %}
-  
-  <div class="container-fluid graycontainer">
+  {% if manufacture %}
+      <img id="image-src" src="{{manufacture.bg_image.url}}" class="fullBg">
+  {% endif %}
 
-    <div class="well">
-      <h1>{{object.name}}</h1>
-      
-    </div>
+  <div class="container-fluid graycontainer {% if manufacture %}alpha60{% endif %}" {% if manufacture %}id="maincontent"{% endif %}>
+   
+
+   
 
     {% if manufacture %}
     
       <div class="row-fluid center">
            <img src="{% thumbnail manufacture.image 200x200 %}"/>
       </div>
-     {% endif %}
+    {% else %}
+     <div class="well">
+      <h1>{{object.name}}</h1>
+      
+    </div>
+    {% endif %}
 
 
     <div class="row-fluid" id="bg">
-      {% if manufacture %}
-      <img id="image-src" src="{{manufacture.bg_image.url}}" class="hide">
-      {% endif %}
+   
       {% for object in object_list %}      
       <div class="span3"  {%if forloop.counter0|divisibleby:"4"%} style="margin-left:0px;" {%endif%}>
         <div class="{% if category%}manufacture{%else%}product{%endif%}-list">

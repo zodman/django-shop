@@ -15,7 +15,7 @@ background: none repeat scroll 0 0 #F4F4F4;
    
 }
 .padding-logo {
-    
+
 	padding-top:5px;
 	padding-left:50px;
 	padding-right:50px;
@@ -268,4 +268,31 @@ margin-top: 40px;
 .center {
     text-align: center;
 
+}
+
+.fullBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#maincontent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+
+}
+
+.alpha60 {
+/* Fallback for web browsers that doesn't support RGBa */
+background: rgb(0, 0, 0) transparent;
+/* RGBa with 0.6 opacity */
+background: rgba(0, 0, 0, 0.6);
+/* For IE 5.5 - 7*/
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+/* For IE 8*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
