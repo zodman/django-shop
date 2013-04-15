@@ -17,7 +17,9 @@ def deploy():
     with cd(PATH):
         run("git reset --hard HEAD")
         run("git pull")
+        #__remote_virtualenv("pip install -r requires.txt")
         __remote_virtualenv("python manage.py migrate")
+        #__remote_virtualenv("python manage.py syncdb")
         run("touch django.wsgi")
         clear_memcached()
 
