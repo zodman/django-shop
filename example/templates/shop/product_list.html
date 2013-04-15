@@ -1,29 +1,8 @@
 {% extends "shop/base.html" %}
 {% load i18n thumbnail %}
 
-{% block extrajs %}
-{% if manufacture %}
-<script type="text/javascript">
-  $(window).load(function(){
-   
-    $("#image-src").fullBg({to:$("#bg")});
-
-  });
-  
-</script>
-{% endif %}
-{% endblock extrajs %}
-
-
 {% block content %}
-  {% if manufacture %}
-      <img id="image-src" src="{{manufacture.bg_image.url}}" class="fullBg">
-  {% endif %}
-
-  <div class="container-fluid graycontainer {% if manufacture %}alpha60{% endif %}" {% if manufacture %}id="maincontent"{% endif %}>
-   
-
-   
+  <div class="container-fluid graycontainer ">
 
     {% if manufacture %}
     
