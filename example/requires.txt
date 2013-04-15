@@ -10,7 +10,8 @@ django-filer==0.9.4
 django-mptt==0.5.5
 django-paypal==0.1.2
 django-polymorphic==0.4.2
--e git+git@github.com:zodman/django-shop.git@b3831fb20856be452ee1893b824d31431ea480ca#egg=django_shop-dev
+-e hg+ssh://hg@bitbucket.org/ubernostrum/django-registration@b3c41b3c7f50523b4ecb8267d6d27a918adc2e1f#egg=django_registration-dev
+-e git+git@github.com:zodman/django-shop.git@43b8e92dfe3e7278bbd2cd56fc960cd1e3d428d5#egg=django_shop-dev
 -e git://github.com/chrisglass/django-shop-paypal.git@5f26f12667890b71c1e8f112de8ba240197898fa#egg=django_shop_paypal-dev
 -e git://github.com/chrisglass/django-shop-simplevariations.git@d3551fce12426abc7a9f2193cdfcd0a7b47a61e5#egg=django_shop_simplevariations-dev
 django-werkzeug-debugger-runserver==0.1.2
