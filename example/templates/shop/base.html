@@ -35,7 +35,6 @@
     <script src="http://vjs.zencdn.net/c/video.js"></script>
     <script src="{{STATIC_URL}}bootstrap/js/application.js"></script>
     <script src="{{MEDIA_URL}}fullbg.js"></script>
-
     <!--[if lt IE 8]>
     <script src="{{STATIC_URL}}bootstrap/js/icon-font-ie7.js"></script>
     <script src="{{STATIC_URL}}bootstrap/js/icon-font-ie7-24.js"></script>
@@ -45,39 +44,42 @@
   </head>
   <body>
     {% block body %}
-  <div class="row-fluid menu ">
-    <div class="span3">
+    <div class="row-fluid menu ">
+      <div class="span3">
         <div class="center">
           <a href="/"><img id="logo" src="{{MEDIA_URL}}image/logo.png"></a>
+          <a  href="http://facebook.com/shopdisenomx">
+          <img style="margin-top:120px; margin-left:10px; height:15px;" src="http://i.imgur.com/ksHgG2A.png">
+          </a>
         </div>
       </div>
       <div class="span7">
         <ul class="site-nav">
           {%show_menu %}
         </ul>
+        
       </div>
       <div class="span2" style="padding-top:15px;">
         
         <div class="palette palette-clouds">
           <a href="{% url 'cart' %}">
-           Tu carrito
+          Tu carrito
           </a>
           <br />
         </div>
         {% if user.is_authenticated %}
-              <div class="palette palette-asbestos">
-                {% trans "Hello" %} {{ user }}<br>
-                   <a href="{% url 'order_list' %}">{% trans "Tus ordenes" %}</a>
-                 </br>
-
-                 <a href="{% url 'auth_logout' %}"> Salir </a>
-              </div>
-          {% else%}
-            <div class="palette palette-silver">
-              <a href="{% url 'registration_register' %}">Registro</a>
-              <a href="{% url 'auth_login' %}">Acceder</a>
-            </div>
-          {% endif %}
+        <div class="palette palette-asbestos">
+          {% trans "Hello" %} {{ user }}<br>
+          <a href="{% url 'order_list' %}">{% trans "Tus ordenes" %}</a>
+          </br>
+          <a href="{% url 'auth_logout' %}"> Salir </a>
+        </div>
+        {% else%}
+        <div class="palette palette-silver">
+          <a href="{% url 'registration_register' %}">Registro</a> |
+          <a href="{% url 'auth_login' %}">Acceder</a>
+        </div>
+        {% endif %}
         
       </div>
     </div>
@@ -144,18 +146,34 @@
       <div class="spaceup">
         <h2>Sobre Nosotros.</h2>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisi mi, feugiat a lobortis at, suscipit nec lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc sed mauris nibh. Duis adipiscing tristique ligula eu dapibus. Integer imperdiet risus non sem semper et ullamcorper nunc convallis. Morbi euismod adipiscing nulla, quis accumsan erat tempus auctor. Proin vel lorem in leo dignissim convallis vitae eget sem. Aliquam auctor tellus id nibh vehicula luctus. Ut lobortis elit eu mauris iaculis euismod at id diam. Suspendisse et risus a dui hendrerit rhoncus. Nunc eu elit quis eros hendrerit venenatis. Aenean in elementum est. Curabitur accumsan rutrum erat eu elementum.
+        Página interesada en dar a comercializar productos de Emprendedores Mexicanos,
+        haciéndole llegar a estos un método ONLINE de venta de sus productos originales.
         </p>
       </div>
     </div>
-    <div class="span7 ">
+    <div class="span4">
+      <div class="spaceup">
+        <h2>¿Qué somos?</h2>
+        <p>
+        Nuestro equipo lo conforma una adicta a la Moda y un desarrollador web, juntos lograron el
+        acuerdo de abrir una tienda ONLINE donde emprendedores puedan vender sus productos.
+        </p>
+      </div>
+    </div>
+    <div class="span4 ">
       <div class="spaceup">
         <h3>Contacto</h3>
         
-          <p style="color: #ff0000;">CEO. Mónica A. Aguilar Gomez</p>
-          <a href="http://facebook.com/shopdisenomx">
-            <img src="http://i.imgur.com/ksHgG2A.png">
-          </a>
+        <p style="color: #ff0000;">CEO. Mónica A. Aguilar Gomez</p>
+        <p>
+          tel: 55234290<br/>
+          Peten 310,Narvate<br/>
+          México, Distrito Federal.<br/>
+
+        </p>
+        <a href="http://facebook.com/shopdisenomx">
+          <img src="http://i.imgur.com/ksHgG2A.png">
+        </a>
         
       </div>
     </div>
