@@ -21,6 +21,6 @@ def deploy():
         #__remote_virtualenv("pip install -r requires.txt")
         __remote_virtualenv("python manage.py migrate")
         #__remote_virtualenv("python manage.py syncdb")
-        run("touch django.wsgi")
+        run("touch ../django.wsgi")
         clear_memcached()
 
