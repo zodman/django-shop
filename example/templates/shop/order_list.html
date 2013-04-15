@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+{% block content  %}
+
+<div class="container-fluid graycontainer">
+	<div class="well">
+		<h1>{% trans "Tu lista de ordenes" %}</h1>
+		
+	</div>
+	<div class="row-fluid">
+		<div class="offset2 span8 square">
+			
+			<ul class="unstyled">
+				{% for order in object_list  %}
+				<li>
+					<a href="{{ order.get_absolute_url }}">{{ order }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -11,7 +11,7 @@ class ImageInline(admin.TabularInline):
     model = ProductImage
 
 class ProductAdmin(BookAdmin):
-    list_display = ("name","active")
+    list_display = ("name","unit_price","active")
     inlines = [ImageInline,]
 
 

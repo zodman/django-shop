@@ -1,23 +1,59 @@
 {% extends "shop/base.html" %}
 {% load i18n thumbnail %}
+
+{% block extrajs %}
+{% if manufacture %}
+<script type="text/javascript">
+  $(window).load(function(){
+
+   
+    $("#image-src").fullBg({to:$("#bg")});
+
+  });
+  
+</script>
+{% endif %}
+{% endblock extrajs %}
+
+
 {% block content %}
   
   <div class="container-fluid graycontainer">
-    <div class="well"><h1>{{object.name}}</h1></div>
-    <div class="row-fluid">
+
+    <div class="well">
+      <h1>{{object.name}}</h1>
+      
+    </div>
+
+    {% if manufacture %}
+    <img id="image-src" src="{{manufacture.bg_image.url}}" class="hide">
+      <div class="row-fluid center">
+           <img src="{% thumbnail manufacture.image 200x200 %}"/>
+      </div>
+     {% endif %}
+
+
+    <div class="row-fluid" id="bg">
       {% for object in object_list %}      
       <div class="span3"  {%if forloop.counter0|divisibleby:"4"%} style="margin-left:0px;" {%endif%}>
-        <div class="product-list">
-          <div class="name">
-            <a href="{% url 'product_detail' object.slug %}">
+        <div class="{% if category%}manufacture{%else%}product{%endif%}-list">
+          
+            {% if object.get_name %}
+            <div class="name">
+            <a href="{{object.get_absolute_url}}">
+
               <b>{{object.get_name}}</b>
             </a>
-          </div>
-          <a href="{% url 'product_detail' object.slug %}">
+            </div>
+            {% endif%}
+          
+          <a href="{{object.get_absolute_url}}">
               <img src="{% thumbnail object.image 300x400 %}">
           </a>
           <div class="clearfix"></div>
-          <span class="palette palette-firm-dark">$ {{object.unit_price}} MXN</span>
+          {% if object.unit_price %}
+            <span class="palette palette-firm-dark">$ {{object.unit_price}} MXN</span>
+          {% endif %}
         </div>
       </div>
       

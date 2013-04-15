@@ -16,14 +16,19 @@ class Manufacture(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField()
     logo = FilerImageField(related_name="manufatures")
-    logo_front = FilerImageField(related_name="manufactures")
+    logo_front = FilerImageField(related_name="manufactures_logo")
     url = models.CharField(max_length = 500, blank=True, null =True)
+    bg_image =FilerImageField(related_name="manufatures_bg")
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("manufacture_detail", args=[self.slug])        
     @property
     def image(self):
         return self.logo
+
 class Product(ProductShop):
     description = models.TextField()
     category = models.ForeignKey(Category, related_name="products")

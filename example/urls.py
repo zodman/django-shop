@@ -7,18 +7,19 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
-from example.myshop.views import welcome_view, category_view
+from example.myshop.views import welcome_view, category_view, manufacture_detail
 admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-    url(r'^checkout/confirm/$', MyOrderConfirmView.as_view(), name='checkout_shipping'),
-   (r'^cart/', include(simplevariations_urls)),
+    url(r'^checkout/confirmar/$', MyOrderConfirmView.as_view(), name='checkout_shipping'),
+   (r'^carrito/', include(simplevariations_urls)),
   #  (r'^products/',products_view),
-    url(r'^products/category/(?P<slug>[a-zA-z0-9\-]+)',category_view, name="category_detail"),
+    url(r'^productos/categoria/(?P<slug>[a-zA-z0-9\-]+)',category_view, name="category_detail"),
+    url(r'^productos/diseno/(?P<slug>[a-zA-z0-9\-]+)',manufacture_detail, name="manufacture_detail"),
     url(r"^$",welcome_view, name="welcome"),
-   url(r'^', include('filer.server.urls')),
-    (r'^', include(shop_urls)), 
+    url(r'^', include('filer.server.urls')),
+      (r'^', include(shop_urls)), 
 
 
 )

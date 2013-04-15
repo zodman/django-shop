@@ -31,13 +31,28 @@ class ProductListView(ShopListView):
 products_view = ProductListView.as_view()
 
 
+class ManufactureView(generic.DetailView):
+    model = Manufacture
+    template_name = "shop/product_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ManufactureView, self).get_context_data(**kwargs)
+        context.update({'object_list':self.object.products.filter(active=True)})
+        return context 
+        
+manufacture_detail = ManufactureView.as_view()
+
 class CategoryView(generic.DetailView):
     model = Category
     template_name = "shop/product_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(CategoryView, self).get_context_data(**kwargs)
-        context.update({'object_list':self.object.products.filter(active=True)})
+        products = self.object.products.filter(active=True)
+        manufacture_list = products.values_list('manufacture__id', flat =True)
+        manufactures = Manufacture.objects.filter(id__in=manufacture_list).distinct()
+        
+        context.update({'object_list':manufactures})
         return context 
         
 category_view = CategoryView.as_view()
