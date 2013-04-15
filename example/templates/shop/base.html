@@ -68,7 +68,15 @@
               <div class="palette palette-asbestos">
                 {% trans "Hello" %} {{ user }}<br>
                    <a href="{% url 'order_list' %}">{% trans "Tus ordenes" %}</a>
+                 </br>
+
+                 <a href="{% url 'auth_logout' %}"> Salir </a>
               </div>
+          {% else%}
+            <div class="palette palette-silver">
+              <a href="{% url 'registration_register' %}">Registro</a>
+              <a href="{% url 'auth_login' %}">Acceder</a>
+            </div>
           {% endif %}
         
       </div>

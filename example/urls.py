@@ -12,9 +12,11 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/', include('registration.auth_urls')),
+    (r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^checkout/confirmar/$', MyOrderConfirmView.as_view(), name='checkout_shipping'),
    (r'^carrito/', include(simplevariations_urls)),
-  #  (r'^products/',products_view),
+    (r'^productos/',products_view),
     url(r'^productos/categoria/(?P<slug>[a-zA-z0-9\-]+)',category_view, name="category_detail"),
     url(r'^productos/diseno/(?P<slug>[a-zA-z0-9\-]+)',manufacture_detail, name="manufacture_detail"),
     url(r"^$",welcome_view, name="welcome"),

@@ -151,7 +151,10 @@ INSTALLED_APPS = (
     'autofixture',
     'paypal.standard.ipn',
     'shop_paypal',
+    'registration',
 )
+
+LOGIN_REDIRECT_URL = "/orders/"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
