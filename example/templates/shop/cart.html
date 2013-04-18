@@ -50,7 +50,7 @@
             {% endfor %}
             <tr>
               <td colspan="2">&nbsp;</td>
-              <td>{% trans "Line Total" %}:</td>
+              <td>{% trans "Total de la linea" %}:</td>
               <td> $ {{ form.instance.line_total }} MXN</td>
               <td>&nbsp;</td>
             </tr>
@@ -60,7 +60,7 @@
           <tfoot>
           <tr>
             <td colspan="3">&nbsp;</td>
-            <td>{% trans "Cart Subtotal" %}</td>
+            <td>{% trans "Subtotal" %}</td>
             <td>$ {{cart.subtotal_price}} MXN</td>
           </tr>
           {% for extra_price_field in cart.extra_price_fields %}
@@ -73,7 +73,7 @@
           {% endfor %}
           <tr>
             <td colspan="3">&nbsp;</td>
-            <td><b>{% trans "Cart Total" %}</b></td>
+            <td><b>{% trans "Total" %}</b></td>
             <td><b> $ {{cart.total_price}} MXN </b></td>
           </tr>
           </tfoot>
@@ -82,7 +82,7 @@
 
           <input type="submit" class="btn btn-small btn-primary"  value="Actualizar costos"/>
           <div class="spaceup">
-            <a class="btn btn-large btn-block" href="{% url 'checkout_selection' %}">{% trans "Proceed to checkout" %}</a>
+            <a class="btn btn-large btn-block" href="{% url 'checkout_selection' %}">{% trans "Proceder a Pagar" %}</a>
           </div>
         </div>
         
@@ -93,13 +93,13 @@
       <div class="spaceup">
         <form action="{% url 'cart_delete' %}" method="post">
           {% csrf_token %}
-          <input type="submit" class="btn btn-warning btn-small" value="{% trans "Empty Shopping Cart" %}"/>
+          <input type="submit" class="btn btn-warning btn-small" value="{% trans "Reiniciar carrito" %}"/>
         </form>
       </div>
        
       {% else %}
-      <p>
-      {% trans "Shopping cart is empty" %}
+      <p class="spaceup spacedown">
+      {% trans "TU carrito de compras esta vacio" %}
       </p>
       {% endif %}
     

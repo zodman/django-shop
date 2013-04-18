@@ -7,9 +7,9 @@ from shop.util.decorators import on_method, shop_login_required, order_required
 
 
 class ExamplePayment(object):
-    backend_name = "Example payment"
-    backend_verbose_name = _("Example payment")
-    url_namespace = "example-payment"
+    backend_name = "Pago por transferencia bancaria"
+    backend_verbose_name = _("Tranferencia bancaria")
+    url_namespace = "transferencia-bancaria"
 
     def __init__(self, shop):
         self.shop = shop
@@ -38,7 +38,7 @@ class ExamplePayment(object):
 
     def get_urls(self):
         urlpatterns = patterns('',
-            url(r'^$', self.show_payment, name='example-payment'),
+            url(r'^$', self.show_payment, name='transferencia-bancaria'),
             url(r'^$', self.process_payment, name='process-payment'),
         )
         return urlpatterns

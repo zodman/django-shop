@@ -34,7 +34,6 @@
     <script src="{{STATIC_URL}}bootstrap/js/jquery.placeholder.js"></script>
     <script src="http://vjs.zencdn.net/c/video.js"></script>
     <script src="{{STATIC_URL}}bootstrap/js/application.js"></script>
-    <script src="{{MEDIA_URL}}fullbg.js"></script>
     <!--[if lt IE 8]>
     <script src="{{STATIC_URL}}bootstrap/js/icon-font-ie7.js"></script>
     <script src="{{STATIC_URL}}bootstrap/js/icon-font-ie7-24.js"></script>
@@ -67,7 +66,6 @@
         </div>
         {% if user.is_authenticated %}
         <div class="">
-          {% trans "Hello" %} {{ user }}<br>
           <a href="{% url 'order_list' %}">{% trans "Tus ordenes" %}</a>
           </br>
           <a href="{% url 'auth_logout' %}"> Salir </a>

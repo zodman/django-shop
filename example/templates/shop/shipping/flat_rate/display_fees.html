@@ -1,14 +1,17 @@
 {% extends "shop/base.html" %}
 {% load url from future %}
+{% load i18n %}
+{% load shop_tags %}
 
 {% block content %}
 <div class="row-fluid spaceup">
 
 	<div class="span4 offset4 ">
 		<div class="well">
-  			<p>Se te agregara un costo de: {{shipping_costs}} Por envio</p><br />
+  			<p>Se te agregara un costo de: $ {{shipping_costs}} MXN Por envio</p><br />
   		<a class="btn btn-primary btn-block" href="{% url 'flat_process' %}">Continuar</a>
   		</div>
 	</div>
 </div>
+
 {% endblock %}

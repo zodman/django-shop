@@ -110,7 +110,7 @@ TEMPLATE_DIRS = (
 )
 # shop config
 SHOP_SHIPPING_BACKENDS = (
-    'shop.shipping.backends.flat_rate.FlatRateShipping',
+    'myshop.shipping.FlatRateShipping',
 )
 
 
