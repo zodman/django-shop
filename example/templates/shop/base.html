@@ -43,17 +43,23 @@
   </head>
   <body>
     {% block body %}
+
+
+
+
     <div class="row-fluid menu ">
-      <div class="span3">
+      <div class="span2">
         <div class="center padding-logo">
           <a href="/"><img id="logo" src="{{MEDIA_URL}}image/logo.png"></a>
          
         </div>
       </div>
-      <div class="span7">
-        <ul class="site-nav">
-          {%show_menu %}
-        </ul>
+      <div class="span8">
+        <nav class="nav ">
+          <ul class="site-nav">
+            {%show_menu %}
+          </ul>
+        </nav>
         
       </div>
       <div class="span2">

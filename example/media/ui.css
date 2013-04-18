@@ -18,36 +18,58 @@ background: none repeat scroll 0 0 #F4F4F4;
 }
 
 .padding-logo {
-
-	padding-top:5px;
-	padding-left:50px;
-	padding-right:50px;
-	display: inline;
-    float: left;
-    position: relative
+text-align: center;
 }
 #logo {
 	height: 120px;
 }
 
-
-
-.site-nav {
-    float: left;
-    height: 140px;
-    overflow: hidden;
-    width: auto;
-    margin-bottom:0px;
+.nav {
+  position: relative;
+  margin: 20px 0;
 }
-.site-nav li {
-	border-right: 1px solid rgba(255, 255, 255, 0.05);
-  	display: inline;
-    float: left;
-    height: 100%;
-    width: auto;
 
+.nav ul {
+  margin: 0;
+  padding: 0;
 
 }
+.nav li {
+  margin: 0 5px 10px 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+.nav a {
+  padding: 3px 12px;
+  text-decoration: none;
+  color: #999;
+  line-height: 100%;
+}
+.nav a:hover {
+  color: #19B69E;
+}
+.nav .current a {
+ 
+}
+
+/* right nav */
+.nav.right ul {
+  text-align: right;
+}
+
+/* center nav */
+.nav.center ul {
+  text-align: center;
+}
+
+.nav li.menu {
+  display:none;
+
+}
+
+
+
 
 .site-nav > li > a {
     color: #A5B1B1;
@@ -56,7 +78,7 @@ background: none repeat scroll 0 0 #F4F4F4;
     float: left;
     font-size: 14px;
     font-weight: 700;
-    height: 100%;
+ 
     padding: 0 30px;
     text-transform: uppercase;
 }
@@ -67,13 +89,65 @@ background: none repeat scroll 0 0 #F4F4F4;
  vertical-align: middle;
     
       display: inline-block;
-    height: 15px;
+    min-height: 15px;
     margin-top: 62px;
 }
 .site-nav > li > a:hover {
-    border-bottom: 3px solid #19B69E;
+  color: 3px solid #19B69E;
 }
 
+
+@media screen and (max-width: 600px) {
+
+  .nav ul {
+    
+    padding: 5px 0;
+  
+    background:  no-repeat 10px 11px;
+   
+  }
+
+  .nav li.menu {
+    display:block;
+
+   }
+  .nav .current {
+    display: block; /* show only current <li> item */
+  }
+  .nav a {
+    display: block;
+    padding: 5px 5px 5px 32px;
+    text-align: left;
+  }
+  .nav .current a {
+    background: none;
+  
+  }
+
+  /* on nav hover */
+  
+  .nav > ul > li > a  span {
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+  /* right nav */
+  .nav.right ul {
+    left: auto;
+    right: 0;
+  }
+
+  /* center nav */
+  .nav ul {
+    margin-left:auto;
+    margin-right:auto;
+  
+    
+  }
+
+
+ 
+}
 
 #sli {
 

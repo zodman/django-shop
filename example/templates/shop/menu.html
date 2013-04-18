@@ -1,5 +1,13 @@
+
 	{% for category in categories %}
-		<li><a href="{% url "category_detail" category.slug %}"><span>{{category.name}}</span></a></li>
+	
+	{% url "category_detail" category.slug as murl %}
+
+		<li class=>
+			<a href="{{murl}}">
+				<span>{{category.name}}</span>
+			</a>
+		</li>
 	{% endfor %}
 		
          
