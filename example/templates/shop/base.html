@@ -117,9 +117,7 @@
     <div class="span4">
       <div class="product ">
         <div class="well wel-small"> {{product.name}}</div>
-        <p>
-        {{product.category.name}}
-        </p>
+      
         <a href="{% url 'product_detail' product.slug %}">
         <img class="" src="{% thumbnail product.image 300x220 %}">
         </a>

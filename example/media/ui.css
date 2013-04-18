@@ -19,6 +19,7 @@ background: none repeat scroll 0 0 #F4F4F4;
 
 .padding-logo {
 text-align: center;
+padding-top: 10px;
 }
 #logo {
 	height: 120px;
