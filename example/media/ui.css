@@ -8,12 +8,15 @@ background: none repeat scroll 0 0 #F4F4F4;
     background: #323539;
     -webkit-box-shadow: rgba(255,255,255,0.08) 0px 1px 0px inset;
     box-shadow: rgba(255,255,255,0.08) 0px 1px 0px inset;
-
-	height: 140px;
+	text-align:center;
 	width:100%;
 /*	background-color: #171A1A;*/
    
 }
+.menu > div {
+	height:140px;
+}
+
 .padding-logo {
 
 	padding-top:5px;
